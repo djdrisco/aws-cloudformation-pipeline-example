@@ -1,5 +1,5 @@
+---
 AWSTemplateFormatVersion: "2010-09-09"
-
 
 Parameters:
   GitHubRepositoryOwner:
@@ -52,7 +52,7 @@ Parameters:
       projects to integrate with GitHub previously, set this value to "false".
 
 Conditions:
-  CreateCodeBuildCredentials: !Equals [ !Sub "${PassGitHubPersonalAccessTokenToCodeBuild}", "true" ]
+  CreateCodeBuildCredentials: !Equals [!Sub "${PassGitHubPersonalAccessTokenToCodeBuild}", "true"]
 
 Resources:
   Pipeline:
@@ -123,7 +123,7 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: aws:kms
               KMSMasterKeyID: alias/aws/s3
-      LoggingConfiguration: {}
+      LoggingConfiguration: { }
       PublicAccessBlockConfiguration:
         BlockPublicAcls: true
         BlockPublicPolicy: true

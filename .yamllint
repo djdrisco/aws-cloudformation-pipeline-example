@@ -9,13 +9,6 @@ rules:
   braces:
     min-spaces-inside: 1
     max-spaces-inside: 1
-    min-spaces-inside-empty: 0
-    max-spaces-inside-empty: 0
-  brackets:
-    min-spaces-inside: 1
-    max-spaces-inside: 1
-    min-spaces-inside-empty: 0
-    max-spaces-inside-empty: 0
   colons:
     max-spaces-before: 0
     max-spaces-after: 1
@@ -33,9 +26,6 @@ rules:
     present: false
   empty-lines:
     max: 1
-  empty-values:
-    forbid-in-block-mappings: true
-    forbid-in-flow-mappings: true
   hyphens:
     max-spaces-after: 1
   indentation:
