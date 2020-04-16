@@ -38,3 +38,4 @@ phases:
         done
 
         exit $TASKCAT_RESULT
+        
