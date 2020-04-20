@@ -25,17 +25,19 @@ phases:
       # Run CFN Nag
       - cfn_nag --fail-on-warnings --output-format txt templates/workload.template
 
+      # taskcat does actually test deployment of cloudformation
+      # which right now we don't want to do
       # Run taskcat, strip color escape codes, output taskcat log files on STDOUT, and exit with result of taskcat
-      - |
-        taskcat -c ci/taskcat.yml | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"
-        TASKCAT_RESULT=${PIPESTATUS[0]}
+     # - |
+     #   taskcat -c ci/taskcat.yml | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"
+     #   TASKCAT_RESULT=${PIPESTATUS[0]}
+     #
+     #   ls -1 taskcat_outputs/*.txt | while read LOG
+     #   do
+     #     echo
+     #     echo "> $LOG"
+     #     cat ${LOG}
+     #   done
 
-        ls -1 taskcat_outputs/*.txt | while read LOG
-        do
-          echo
-          echo "> $LOG"
-          cat ${LOG}
-        done
-
-        exit $TASKCAT_RESULT
+     #   exit $TASKCAT_RESULT
         
