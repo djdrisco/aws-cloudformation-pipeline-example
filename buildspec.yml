@@ -24,7 +24,8 @@ phases:
       #- cfn-lint --include-checks I --template templates/workload.template
       - cfn-lint --template templates/workload.template
       # Run CFN Nag
-      - cfn_nag --fail-on-warnings --output-format txt templates/workload.template
+      #- cfn_nag --fail-on-warnings --output-format txt templates/workload.template
+       - cfn_nag --fail-on-warnings --output-format txt templates/
 
       # taskcat does actually test deployment of cloudformation
       # which right now we don't want to do
