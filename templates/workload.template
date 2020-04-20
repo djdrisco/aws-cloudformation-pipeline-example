@@ -23,7 +23,7 @@ Resources:
           - Sid: PublicReadForGetBucketObjects
             Effect: Allow
             Principal:
-              AWS: arn:aws:iam::111122223333:root
+              AWS: arn:aws:iam::199630292710:root
             Action: 's3:GetObject'
             Resource: !Join
               - ''
